@@ -12,3 +12,6 @@ Task 6: complete (9c9fc72, curated 16 services from official sources, 26/26 test
 Tasks 5-6 review: clean (1 Important fixed 3ad451f — elderly hotline; id_card fee 100 & unemployment 1694 confirmed correct)
 Task 7: complete (88d26ea ingest, then FIX 3727958) — real offices only per user decision (dropped 920 centroid padding), Thai province names (EN→TH map), floor district 300. Final: 1145 offices (district 352/local 677/dlt 43/revenue 33/sso 15/employment 10/dbd 7/skill 7/passport 1), missing-province 0.96%. 26/26 tests.
 Task 8: complete (88ca783, lib/offices loader+nearbyForTypes+byProvince, 2 tests) — trivial verbatim, review deferred to final whole-branch
+Task 9: complete (b207855, persona-first landing, frontend-design กระดาษไทย navy/amber/cream/Anuphan, 28 tests)
+Task 10: complete (0844177, service detail + lazy locator geolocation+province fallback, 16 static pages)
+Tasks 9-10 UI review: clean (no critical; 2 Important + 2 minor fixed 06e2629 — client-side FreshnessBanner, styled back/logo links, select label assoc)
