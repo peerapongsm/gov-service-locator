@@ -647,3 +647,375 @@ main { flex: 1; }
   text-align: center;
   line-height: 1.8;
 }
+
+/* ══════════════════════════════════════════════════════════
+   SERVICE DETAIL PAGE
+══════════════════════════════════════════════════════════ */
+
+/* ── Detail mini-hero ─────────────────────────────────────── */
+.detail-hero {
+  background-color: var(--c-primary);
+  background-image:
+    radial-gradient(ellipse 55% 65% at 88% 8%,  rgba(30, 120, 176, 0.35) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 50% at 6%  90%, rgba(217, 137, 26, 0.14) 0%, transparent 60%),
+    radial-gradient(rgba(255, 255, 255, 0.038) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 22px 22px;
+  padding: var(--sp-6) 0 var(--sp-10);
+  color: var(--c-text-inv);
+  animation: fadeUp var(--dur-slow) var(--ease) both;
+}
+
+.detail-back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  color: rgba(255, 255, 255, 0.58);
+  font-size: var(--t-sm);
+  font-weight: 500;
+  text-decoration: none;
+  margin-bottom: var(--sp-5);
+  transition: color var(--dur-fast) var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+.detail-back:hover { color: var(--c-text-inv); }
+
+.detail-group {
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-accent-bright);
+  margin-bottom: var(--sp-2);
+}
+
+.detail-title {
+  font-size: clamp(var(--t-2xl), 5vw, var(--t-4xl));
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--sp-5);
+}
+
+.detail-channel-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.badge--channel-office {
+  background: rgba(255, 255, 255, 0.13);
+  color: var(--c-text-inv);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+.badge--channel-online {
+  background: rgba(217, 137, 26, 0.22);
+  color: var(--c-accent-bright);
+  border: 1px solid rgba(217, 137, 26, 0.38);
+}
+
+/* ── Detail body ──────────────────────────────────────────── */
+.detail-body {
+  padding: var(--sp-8) 0 var(--sp-16);
+  animation: fadeUp var(--dur-slow) var(--ease) 80ms both;
+}
+
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+.detail-grid {
+  display: grid;
+  gap: var(--sp-5);
+}
+@media (min-width: 700px) {
+  .detail-grid {
+    grid-template-columns: 1fr 340px;
+    align-items: start;
+  }
+}
+
+.detail-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+/* ── Detail cards ─────────────────────────────────────────── */
+.detail-card {
+  background: var(--c-surface);
+  border-radius: var(--r-md);
+  border: 1px solid var(--c-border);
+  border-top: 3px solid var(--c-accent-bright);
+  padding: var(--sp-6);
+  box-shadow: var(--s-sm);
+}
+
+.detail-card__label {
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-text-3);
+  margin-bottom: var(--sp-4);
+}
+
+/* ── Docs checklist ───────────────────────────────────────── */
+.docs-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.docs-item {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: flex-start;
+  font-size: var(--t-base);
+  line-height: 1.55;
+  color: var(--c-text);
+}
+
+.docs-item__check {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--r-sm);
+  background: var(--c-accent-glow);
+  border: 1.5px solid var(--c-accent-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  color: var(--c-accent-bright);
+}
+
+/* ── Fee + Hours meta grid ────────────────────────────────── */
+.detail-meta-pair {
+  display: grid;
+  gap: var(--sp-5);
+}
+@media (min-width: 480px) {
+  .detail-meta-pair { grid-template-columns: 1fr 1fr; }
+}
+
+.meta-item__key {
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-text-3);
+  margin-bottom: var(--sp-2);
+}
+
+.meta-item__val {
+  font-size: var(--t-sm);
+  color: var(--c-text);
+  line-height: 1.65;
+}
+
+/* ── Actions (official link + hotline) ───────────────────── */
+.detail-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-5);
+}
+
+/* ── Verified indicator ───────────────────────────────────── */
+.detail-verified {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--t-xs);
+  color: var(--c-text-3);
+  margin-bottom: var(--sp-3);
+}
+
+.detail-verified__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--r-full);
+  background: #22C55E;
+  flex-shrink: 0;
+}
+
+/* ── Freshness banner (stale data warning) ────────────────── */
+.freshness-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  background: #FEF3C7;
+  border: 1.5px solid #F59E0B;
+  border-radius: var(--r-md);
+  padding: var(--sp-4) var(--sp-5);
+  font-size: var(--t-sm);
+  color: #92400E;
+  line-height: 1.65;
+}
+
+/* ── Disclaimer line ──────────────────────────────────────── */
+.detail-disclaimer {
+  font-size: var(--t-xs);
+  color: var(--c-text-3);
+  border-top: 1px solid var(--c-border);
+  padding-top: var(--sp-4);
+  line-height: 1.75;
+}
+
+/* ══════════════════════════════════════════════════════════
+   LOCATOR COMPONENT
+══════════════════════════════════════════════════════════ */
+
+.locator {
+  background: var(--c-surface);
+  border-radius: var(--r-md);
+  border: 1px solid var(--c-border);
+  border-top: 3px solid var(--c-primary);
+  padding: var(--sp-6);
+  box-shadow: var(--s-sm);
+}
+
+.locator__heading {
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-text-3);
+  margin-bottom: var(--sp-4);
+}
+
+.locator__trigger {
+  width: 100%;
+}
+
+/* Loading state */
+.locator__status {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-size: var(--t-sm);
+  color: var(--c-text-2);
+  padding: var(--sp-2) 0;
+}
+
+.locator__spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--c-border-2);
+  border-top-color: var(--c-primary);
+  border-radius: var(--r-full);
+  flex-shrink: 0;
+  animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Office list (nearby + province) */
+.locator__office-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin-top: var(--sp-4);
+  animation: fadeUp var(--dur-base) var(--ease) both;
+}
+
+.locator__office-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--c-surface-2);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md);
+}
+
+.locator__office-name {
+  font-size: var(--t-sm);
+  font-weight: 500;
+  color: var(--c-text);
+  flex: 1;
+  line-height: 1.4;
+}
+
+.locator__office-km {
+  font-size: var(--t-xs);
+  font-weight: 600;
+  color: var(--c-primary-light);
+  white-space: nowrap;
+}
+
+/* Province picker */
+.locator__province-label {
+  font-size: var(--t-sm);
+  color: var(--c-text-2);
+  margin-top: var(--sp-3);
+  margin-bottom: var(--sp-2);
+}
+
+.locator__province-select {
+  width: 100%;
+  padding: 0.65rem var(--sp-4);
+  border: 2px solid var(--c-border);
+  border-radius: var(--r-md);
+  background: var(--c-surface);
+  color: var(--c-text);
+  font-family: var(--font-anuphan, inherit);
+  font-size: var(--t-base);
+  cursor: pointer;
+  outline: none;
+  min-height: 44px;
+  transition:
+    border-color var(--dur-fast) var(--ease),
+    box-shadow   var(--dur-fast) var(--ease);
+  -webkit-appearance: auto;
+  appearance: auto;
+}
+.locator__province-select:focus {
+  border-color: var(--c-accent);
+  box-shadow: var(--s-focus);
+}
+
+/* Province results list (name only, no km) */
+.locator__province-office {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--c-surface-2);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md);
+}
+
+.locator__province-office-name {
+  font-size: var(--t-sm);
+  font-weight: 500;
+  color: var(--c-text);
+  flex: 1;
+  line-height: 1.4;
+}
+
+/* Empty / error */
+.locator__empty {
+  margin-top: var(--sp-4);
+  padding: var(--sp-5) var(--sp-4);
+  text-align: center;
+  color: var(--c-text-3);
+  font-size: var(--t-sm);
+  line-height: 1.6;
+}
+
+/* Always-shown caveat */
+.locator__caveat {
+  margin-top: var(--sp-5);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--c-border);
+  font-size: var(--t-xs);
+  color: var(--c-text-3);
+  line-height: 1.75;
+}
