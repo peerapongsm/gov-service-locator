@@ -19,6 +19,7 @@ describe('classifyOffice — positives', () => {
   });
   it('townhall amenity → district', () => {
     expect(classifyOffice({ amenity: 'townhall', name: 'ที่ว่าการอำเภอเมือง' })).toBe('district');
+    expect(classifyOffice({ amenity: 'townhall', name: 'ศาลาว่าการ' })).toBe('district');
     expect(classifyOffice(gov('สำนักงานเขตจตุจักร'))).toBe('district');
   });
   it('เทศบาล/อบต → local', () => {

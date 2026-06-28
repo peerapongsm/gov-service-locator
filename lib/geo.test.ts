@@ -16,4 +16,8 @@ describe('pointInPolygon with hole', () => {
   it('inside hole → false', () => {
     expect(pointInPolygon(5, 5, [square, hole])).toBe(false);
   });
+  it('empty polygon → false; single ring no hole → delegates', () => {
+    expect(pointInPolygon(5, 5, [])).toBe(false);
+    expect(pointInPolygon(5, 5, [square])).toBe(true);
+  });
 });

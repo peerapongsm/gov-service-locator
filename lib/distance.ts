@@ -10,7 +10,7 @@ export function haversineKm(a: LatLon, b: LatLon): number {
   const s =
     Math.sin(dLat / 2) ** 2 +
     Math.cos(rad(a.lat)) * Math.cos(rad(b.lat)) * Math.sin(dLon / 2) ** 2;
-  return 2 * R * Math.asin(Math.min(1, Math.sqrt(s)));
+  return 2 * R * Math.asin(Math.min(1, Math.sqrt(Math.max(0, s))));
 }
 
 export function rankNearby(offices: Office[], from: LatLon, limit = 5): (Office & { km: number })[] {
