@@ -1,7 +1,17 @@
+import { Anuphan } from 'next/font/google';
 import './globals.css';
 
+const anuphan = Anuphan({
+  subsets: ['thai', 'latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-anuphan',
+  display: 'swap',
+});
+
 export const metadata = {
-  title: 'Gov Service Locator',
+  title: 'หาบริการรัฐใกล้ฉัน',
+  description:
+    'คู่มือบริการรัฐสำหรับประชาชนทั่วไป ไรเดอร์ ฟรีแลนซ์ เจ้าของกิจการ ผู้สูงอายุ',
 };
 
 export default function RootLayout({
@@ -10,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="th">
+    <html lang="th" className={anuphan.variable}>
       <head>
         <script
           defer
