@@ -15,3 +15,4 @@ Task 8: complete (88ca783, lib/offices loader+nearbyForTypes+byProvince, 2 tests
 Task 9: complete (b207855, persona-first landing, frontend-design กระดาษไทย navy/amber/cream/Anuphan, 28 tests)
 Task 10: complete (0844177, service detail + lazy locator geolocation+province fallback, 16 static pages)
 Tasks 9-10 UI review: clean (no critical; 2 Important + 2 minor fixed 06e2629 — client-side FreshnessBanner, styled back/logo links, select label assoc)
+Task 11: complete (861cdb9, PWA manifest+icons(sharp)+SW network-first-HTML/SWR-offices.json, 28 tests)

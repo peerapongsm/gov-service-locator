@@ -1,5 +1,5 @@
 # project-9-gov-service-locator — Memory Log
-**Last updated:** 2026-06-28
+**Last updated:** 2026-06-28 (Task 11)
 
 ---
 
@@ -21,6 +21,10 @@ Thai government service locator — helps users find the right government office
   - 1145 offices total (real offices only): district=352, local=677, dlt=43, revenue=33, sso=15, skill=7, employment=10, dbd=7, passport=1
   - 11 missing province (0.96%) — acceptable
   - All 26 tests still green
+- Task 11 DONE (commit 861cdb9): PWA — manifest.json, sw.js, RegisterSW.tsx, icons
+  - Icons generated via sharp (SVG→PNG): navy bg #0B3954, amber #D9891A government building glyph
+  - SW rules: navigate=network-first, offices.json=SWR, /_next/=cache-first, cross-origin=pass-through
+  - All 28 tests green; build emits out/sw.js, out/manifest.json, out/icon/icon-{192,512}.png
 
 ## 4. File Map
 - `lib/classify.ts` — OfficeType enum + classifyOffice(); district matched by สำนักงานเขต|ที่ว่าการอำเภอ|ที่ว่าการเขต + townhall fallback (bare อำเภอ removed)
