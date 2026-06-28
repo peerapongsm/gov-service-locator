@@ -18,3 +18,5 @@ Tasks 9-10 UI review: clean (no critical; 2 Important + 2 minor fixed 06e2629 â€
 Task 11: complete (861cdb9, PWA manifest+icons(sharp)+SW network-first-HTML/SWR-offices.json, 28 tests)
 Final whole-branch review (opus): SOUND, safe to deploy. No critical. 1 Important + 2 minors fixed 058f3e5 (offices cache-on-reject recovery, sw res.ok guards, tel strip spaces).
 Task 12: deploy PENDING user OK for `gh repo create --public`.
+Task 12: complete â€” DEPLOYED + LIVE https://peerapongsm.github.io/gov-service-locator/ (public repo, Pages Actions, deploy success). Live-verified: home/service/offices.json/manifest/sw all 200, persona landing renders, 1145 offices Thai province. armory #9 done+url+repo+5phases pushed (efe6469). Umami embedded.
+ALL 12 TASKS COMPLETE.
