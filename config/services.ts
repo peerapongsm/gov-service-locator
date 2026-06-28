@@ -342,7 +342,7 @@ export const SERVICES: Service[] = [
     stdHours: 'จันทร์–ศุกร์ 08:30–16:30 (ปิดเสาร์–อาทิตย์/วันหยุดราชการ)',
     channel: ['office'],
     officialUrl: 'https://www.dop.go.th/th/know/13/328',
-    hotline: '02 642 4336',
+    hotline: '02-659-6811',
     lastVerified: '2026-06-28',
     locatorAvailable: true,
   },
