@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Service } from '@/config/services';
 import { Locator } from './Locator';
+import { FreshnessBanner } from './FreshnessBanner';
 
 const CHANNEL_LABEL: Record<string, string> = {
   office: 'ติดต่อที่สำนักงาน',
@@ -65,13 +66,7 @@ interface Props {
   service: Service;
 }
 
-/** Returns true when lastVerified is older than ~6 months (183 days). */
-function isStale(lastVerified: string): boolean {
-  return Date.now() - Date.parse(lastVerified) > 1000 * 60 * 60 * 24 * 183;
-}
-
 export function ServiceDetail({ service }: Props) {
-  const stale = isStale(service.lastVerified);
 
   return (
     <>
@@ -91,7 +86,12 @@ export function ServiceDetail({ service }: Props) {
         {/* ── Mini-hero ── */}
         <section className="detail-hero" aria-labelledby="detail-title">
           <div className="container">
-            <Link href="/" className="detail-back" aria-label="กลับหน้าหลัก">
+            <Link
+              href="/"
+              className="btn btn-outline btn-sm"
+              style={{ marginBottom: 'var(--sp-5)' }}
+              aria-label="กลับหน้าหลัก"
+            >
               ← กลับ
             </Link>
             <p className="detail-group">{service.group}</p>
@@ -115,15 +115,8 @@ export function ServiceDetail({ service }: Props) {
         <section className="detail-body">
           <div className="container">
             <div className="detail-content">
-              {/* Freshness warning — only when data is older than ~6 months */}
-              {stale && (
-                <div className="freshness-banner" role="alert" aria-live="polite">
-                  <span aria-hidden="true" style={{ flexShrink: 0 }}>⚠️</span>
-                  <span>
-                    ข้อมูลตรวจล่าสุดนานแล้ว อาจเปลี่ยน — โปรดยืนยันที่ลิงก์ทางการ
-                  </span>
-                </div>
-              )}
+              {/* Freshness warning — evaluated in browser to avoid stale static-export */}
+              <FreshnessBanner lastVerified={service.lastVerified} />
 
               <div className="detail-grid">
                 {/* ── Left column: docs + meta ── */}

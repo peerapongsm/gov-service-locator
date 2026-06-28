@@ -145,12 +145,14 @@ export function Locator({ service }: Props) {
       {/* ── Geolocation denied: province picker ── */}
       {(phase.state === 'province-select' || phase.state === 'province-results') && (
         <>
-          <p className="locator__province-label">เลือกจังหวัดเพื่อค้นหา</p>
+          <label htmlFor="province-select" className="locator__province-label">
+            เลือกจังหวัดเพื่อค้นหา
+          </label>
           <select
+            id="province-select"
             className="locator__province-select"
             value={selectedProvince}
             onChange={(e) => handleProvinceChange(e.target.value)}
-            aria-label="เลือกจังหวัด"
           >
             <option value="" disabled>
               -- เลือกจังหวัด --
