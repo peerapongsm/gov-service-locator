@@ -1,5 +1,6 @@
 import { Anuphan } from 'next/font/google';
 import './globals.css';
+import RegisterSW from './components/RegisterSW';
 
 const anuphan = Anuphan({
   subsets: ['thai', 'latin'],
@@ -22,6 +23,8 @@ export default function RootLayout({
   return (
     <html lang="th" className={anuphan.variable}>
       <head>
+        <link rel="manifest" href="/gov-service-locator/manifest.json" />
+        <meta name="theme-color" content="#0B3954" />
         <script
           defer
           src="https://umami-host-peerapongsms-projects.vercel.app/script.js"
@@ -29,7 +32,10 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <RegisterSW />
+      </body>
     </html>
   );
 }
