@@ -25,6 +25,10 @@ Thai government service locator — helps users find the right government office
   - Icons generated via sharp (SVG→PNG): navy bg #0B3954, amber #D9891A government building glyph
   - SW rules: navigate=network-first, offices.json=SWR, /_next/=cache-first, cross-origin=pass-through
   - All 28 tests green; build emits out/sw.js, out/manifest.json, out/icon/icon-{192,512}.png
+- Final review fixes DONE (commit 058f3e5): 3 correctness fixes
+  - lib/offices.ts: cache cleared on rejection so retries can recover (p.catch → cache = null)
+  - public/sw.js: res.ok guards added to navigate + offices.json SWR handlers (prevents caching 404.html)
+  - app/components/ServiceDetail.tsx: tel: href strips whitespace via .replace(/\s/g, '') — visible text unchanged
 
 ## 4. File Map
 - `lib/classify.ts` — OfficeType enum + classifyOffice(); district matched by สำนักงานเขต|ที่ว่าการอำเภอ|ที่ว่าการเขต + townhall fallback (bare อำเภอ removed)

@@ -16,3 +16,5 @@ Task 9: complete (b207855, persona-first landing, frontend-design กระด�
 Task 10: complete (0844177, service detail + lazy locator geolocation+province fallback, 16 static pages)
 Tasks 9-10 UI review: clean (no critical; 2 Important + 2 minor fixed 06e2629 — client-side FreshnessBanner, styled back/logo links, select label assoc)
 Task 11: complete (861cdb9, PWA manifest+icons(sharp)+SW network-first-HTML/SWR-offices.json, 28 tests)
+Final whole-branch review (opus): SOUND, safe to deploy. No critical. 1 Important + 2 minors fixed 058f3e5 (offices cache-on-reject recovery, sw res.ok guards, tel strip spaces).
+Task 12: deploy PENDING user OK for `gh repo create --public`.
