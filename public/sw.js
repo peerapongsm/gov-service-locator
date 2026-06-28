@@ -14,7 +14,7 @@ self.addEventListener('fetch', (event) => {
   if (req.mode === 'navigate') {
     event.respondWith(
       fetch(req)
-        .then((res) => { const c = res.clone(); caches.open(CACHE).then((ca) => ca.put(req, c)); return res; })
+        .then((res) => { if (res.ok) { const c = res.clone(); caches.open(CACHE).then((ca) => ca.put(req, c)); } return res; })
         .catch(() => caches.match(req).then((m) => m || caches.match(SHELL)))
     );
     return;
@@ -23,7 +23,7 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
       caches.open(CACHE).then(async (ca) => {
         const cached = await ca.match(req);
-        const net = fetch(req).then((res) => { ca.put(req, res.clone()); return res; }).catch(() => cached);
+        const net = fetch(req).then((res) => { if (res.ok) { ca.put(req, res.clone()); } return res; }).catch(() => cached);
         return cached || net;
       })
     );

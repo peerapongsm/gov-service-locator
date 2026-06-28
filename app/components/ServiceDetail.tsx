@@ -168,7 +168,7 @@ export function ServiceDetail({ service }: Props) {
                         เว็บไซต์ทางการ
                       </a>
                       <a
-                        href={`tel:${service.hotline}`}
+                        href={`tel:${service.hotline.replace(/\s/g, '')}`}
                         className="btn btn-outline"
                         aria-label={`โทรสายด่วน ${service.hotline}`}
                       >

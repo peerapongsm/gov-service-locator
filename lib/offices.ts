@@ -6,9 +6,11 @@ let cache: Promise<Office[]> | null = null;
 export function loadOffices(): Promise<Office[]> {
   if (!cache) {
     const base = process.env.NEXT_PUBLIC_BASE_PATH ?? '/gov-service-locator';
-    cache = fetch(`${base}/data/offices.json`)
+    const p = fetch(`${base}/data/offices.json`)
       .then((r) => r.json())
       .then((d: { offices: Office[] }) => d.offices);
+    p.catch(() => { cache = null; });
+    cache = p;
   }
   return cache;
 }
