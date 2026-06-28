@@ -13,8 +13,9 @@ Thai government service locator — helps users find the right government office
 
 ## 3. Current State (Tasks)
 - Task 5 DONE (commit d827ce6): `config/services.ts` + `config/services.test.ts` — skeleton catalog + validation tests
-  - 3 tests PASS (unique ids, officeTypes valid, persona refs valid)
-  - 1 test RED intentionally ("every service is complete and sourced") — placeholders empty; later task fills them
+- Task 6 DONE (commit 9c9fc72): curated all 16 service entries — docs/fee/stdHours/officialUrl/hotline/lastVerified filled from official agency sources
+  - ALL 26 tests GREEN (4 files); "every service is complete and sourced" now passes
+  - Sources: bora.dopa.go.th (hotline 1548), consular.mfa.go.th (02 572 8442), dlt.go.th (1584), rd.go.th (1161), sso.go.th (1506), doe.go.th (1694), dsd.go.th (02 245 1707), dbd.go.th (1570), dop.go.th (02 642 4336)
 
 ## 4. File Map
 - `lib/classify.ts` — OfficeType enum + classifyOffice()
